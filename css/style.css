@@ -69,7 +69,8 @@ body, html {
 
 /* Desktop */
 #desktop {
-  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
   background: linear-gradient(to bottom, #b0d8f0, #f5c6d6);
   display: flex;
   flex-direction: column;
@@ -84,6 +85,7 @@ body, html {
   display: grid;
   grid-template-columns: repeat(2, 100px);
   gap: 30px 40px;
+  padding-bottom: 80px; /* ✅ thêm dòng này */
 }
 
 .icon {
@@ -317,5 +319,21 @@ body, html {
 
 #wifi:hover img {
   opacity: 0.8;
+}
+@media (max-width: 500px) {
+  #sidebar {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    padding-bottom: 100px;
+  }
+
+  .icon img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon span {
+    font-size: 13px;
+  }
 }
 
