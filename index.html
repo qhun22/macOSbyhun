@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Doe OS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Lock Screen -->
+  <div id="lockScreen">
+    <video autoplay muted loop playsinline id="lockVideo">
+      <source src="images/6725718741413.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="lock-time" id="lockTime"></div>
+    <p class="lock-msg">Press <b>Enter</b> or tap <b>Login</b> to unlock</p>
+    <button id="unlockBtn">Login</button>
+  </div>
+
+  <!-- Desktop -->
+  <div id="desktop" class="hidden">
+    
+    <!-- Sidebar Icons -->
+    <div id="sidebar">
+      <div class="icon" onclick="openApp('work')">
+        <img src="images/spoti.png" alt="Spotify" />
+        <span>Spotify</span>
+      </div>
+      <div class="icon">
+        <img src="images/file1.png" alt="Github" />
+        <span>Github</span>
+      </div>
+      <div class="icon">
+        <img src="images/githu.png" alt="Education" />
+        <span>Education</span>
+      </div>
+      <div class="icon">
+        <img src="images/mailbox.png" alt="Email" />
+        <span>Email</span>
+      </div>
+      <div class="icon">
+        <img src="images/file2.png" alt="Skills" />
+        <span>Skills</span>
+      </div>
+    </div>
+
+    <!-- App Window Example -->
+    <div id="workApp" class="app-window hidden">
+      <div class="title-bar">
+        <span>Work Experience</span>
+        <button onclick="closeApp('work')">X</button>
+      </div>
+      <div class="app-content">
+        <h3>Software Engineer</h3>
+        <p>Company: Blah Blah</p>
+        <p>2024 - Present</p>
+      </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+      <div id="start" onclick="toggleStartMenu()">
+        <img src="images/power.png" alt="Power" />
+      </div>
+      <div id="clockArea">
+  <div class="clock-text">
+    <div id="clock"></div>
+    <div id="date"></div>
+  </div>
+</div>
+</div>
+
+    <!-- Start Menu -->
+    <div id="startMenu">
+      <ul>
+        <li>Sleep</li>
+        <li>Shut Down</li>
+        <li>Restart</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay for Sleep / Shutdown / Restart -->
+  <div id="systemOverlay" class="hidden">
+    <img id="systemImage" src="" alt="System Action" />
+  </div>
+
+  <!-- Âm thanh khởi động -->
+  <audio id="startupSound" src="images/startup.mp3" preload="auto"></audio>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
